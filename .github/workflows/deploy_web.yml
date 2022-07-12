@@ -1,0 +1,27 @@
+name: Deploy Web
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Deploy Web
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch repo
+        uses: actions/checkout@v2
+      
+      - name: Install flutter
+        run: sudo snap install flutter --classic
+      
+      - name: Build for web
+        run: flutter build web
+      
+      - name: Deploy
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
+          projectId: cv-parser-ca402
+          channelId: live
