@@ -6,6 +6,8 @@ import 'package:flutter_dropzone/flutter_dropzone.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
+import '../colors.dart';
+
 class InitialPage extends GetView<InitialPageController> {
   const InitialPage({Key? key}) : super(key: key);
 
@@ -46,7 +48,7 @@ class InitialPage extends GetView<InitialPageController> {
           }
           return const CircularProgressIndicator(
             valueColor: AlwaysStoppedAnimation<Color>(
-              Color(0xFFF57C00),
+              firebaseOrange,
             ),
           );
         },

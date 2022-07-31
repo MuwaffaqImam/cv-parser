@@ -1,3 +1,4 @@
+import 'package:cvparser_b21_01/constants.dart';
 import 'package:cvparser_b21_01/services/authentication.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -42,6 +43,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                 if (user != null) {
                   // todo forward user to the main screen
                   // update user data
+                  currentUser = user;
                 }
 
                 setState(() {

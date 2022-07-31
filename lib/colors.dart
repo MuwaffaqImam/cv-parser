@@ -7,6 +7,7 @@ const Color colorSurfaceSmoothGreenPlant = Color(0xFFFBFDF7);
 const Color colorPrimaryLightRedCaramel = Color(0xFFF2EEE1);
 const Color colorSecondaryLightGreenPlant = Color(0xFFE9F1E8);
 const Color colorTextSmoothBlack = Color(0xFF49454F);
+const Color firebaseOrange = Color(0xFFF57C00);
 
 const colorScheme = ColorScheme(
   brightness: Brightness.light,

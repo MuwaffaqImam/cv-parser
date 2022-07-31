@@ -27,13 +27,14 @@ class Contact extends GetView<MainPageController> {
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
                         controller.current?.data['PERSON']?[0].match ??
                             'no name',
                         style: const TextStyle(
                           height: 1,
-                          fontSize: 30,
+                          fontSize: 12,
                           fontFamily: "Eczar",
                           fontWeight: FontWeight.w400,
                           color: colorTextSmoothBlack,
@@ -45,7 +46,7 @@ class Contact extends GetView<MainPageController> {
                             'no email',
                         style: const TextStyle(
                           height: 1,
-                          fontSize: 18,
+                          fontSize: 12,
                           fontFamily: "Eczar",
                           fontWeight: FontWeight.w400,
                           color: colorTextSmoothBlack,
