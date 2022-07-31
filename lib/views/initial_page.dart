@@ -1,6 +1,8 @@
 import 'package:cvparser_b21_01/controllers/initial_page_controller.dart';
-import 'package:flutter_dropzone/flutter_dropzone.dart';
+import 'package:cvparser_b21_01/services/authentication.dart';
+import 'package:cvparser_b21_01/views/buttons/google_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dropzone/flutter_dropzone.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
@@ -34,6 +36,21 @@ class InitialPage extends GetView<InitialPageController> {
           height: 0.5,
         ),
       )),
+      FutureBuilder(
+        future: Authentication.initializeFirebase(context: context),
+        builder: (context, snapshot) {
+          if (snapshot.hasError) {
+            return const Text('Error initializing Firebase');
+          } else if (snapshot.connectionState == ConnectionState.done) {
+            return GoogleSignInButton();
+          }
+          return const CircularProgressIndicator(
+            valueColor: AlwaysStoppedAnimation<Color>(
+              Color(0xFFF57C00),
+            ),
+          );
+        },
+      ),
       Container(
         padding: const EdgeInsets.fromLTRB(0, 0, 30, 10),
         child: Align(

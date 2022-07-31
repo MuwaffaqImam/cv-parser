@@ -13,7 +13,7 @@ class TopBar extends GetView<MainPageController> {
       children: [
         const SizedBox(height: 25.0),
         TextField(
-          onSubmitted: controller.updateFileExplorerQuery,
+          onChanged: controller.updateFileExplorerQuery,
           style: const TextStyle(color: colorTextSmoothBlack),
           cursorColor: colorTextSmoothBlack,
           decoration: InputDecoration(
